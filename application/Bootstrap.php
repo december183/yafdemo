@@ -10,6 +10,8 @@ class Bootstrap extends Yaf_Bootstrap_Abstract {
     }
     public function _initRoute(Yaf_Dispatcher $dispatcher) {
         //这里注册自己的路由协议，默认使用简单路由
+        $router = $dispatcher->getRouter();
+        $router->addConfig(Yaf_Registry::get('config')->routes);
     }
 
     public function _initView(Yaf_Dispatcher $dispatcher) {
